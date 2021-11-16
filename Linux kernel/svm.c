@@ -4393,7 +4393,7 @@ static int svm_leave_smm(struct kvm_vcpu *vcpu, const char *smstate)
 
 			nested_load_control_from_vmcb12(svm, &vmcb12->control);
 
-			ret = enter_svm_guest_mode(vcpu, vmcb12_gpa, vmcb12);
+			ret = enter_svm_guest_mode(vcpu, vmcb12_gpa, vmcb12, false);
 			kvm_vcpu_unmap(vcpu, &map, true);
 
 			/*
